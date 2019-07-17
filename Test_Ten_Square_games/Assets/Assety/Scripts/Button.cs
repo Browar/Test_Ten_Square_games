@@ -11,7 +11,6 @@ public class Button : MonoBehaviour
     private GameObject[] fishing_rods;
     private GameObject[] chooses;
     public GameObject choose;
-    public GameObject parentobj;
 
     void Awake()
     {
@@ -19,9 +18,6 @@ public class Button : MonoBehaviour
         {
             SetRod();
         }
-
-        parentobj = gameObject.transform.parent.gameObject;
-        Debug.Log(parentobj.name);
         //funckja która została stworzona aby wypełniać GameObjects jakim są 
         //fishing_rod oraz fishing_rod_shadow w prefab na potezeby skryptu CloneMaker tworzącego 
         //nowe okna z wędkami i generującego nowe rzędy tak aby można było skalować scrollwindow
@@ -32,6 +28,8 @@ public class Button : MonoBehaviour
         OffRod();
         fishing_rod.SetActive(true);
         fishing_rod_shadow.SetActive(true);
+        OffChoose();
+        choose.SetActive(true);
         //scrollView.verticalNormalizedPosition = 1; //umożliwia szybki powrót do góry po wybraniu wędki
     }
     void OffRod()
@@ -42,14 +40,14 @@ public class Button : MonoBehaviour
             rod.SetActive(false);
         }
     }
-    /*void OffChoose()
+    void OffChoose()
     {
-        chooses = parentobj.transform.Find("chooses");  //GameObject.FindGameObjectsWithTag("fishing_rod");
-        foreach (GameObject rod in fishing_rods)
+        chooses = GameObject.FindGameObjectsWithTag("choose");
+        foreach (GameObject choose in chooses)
         {
-            rod.SetActive(false);
+            choose.SetActive(false);
         }
-    }*/
+    }
     void SetRod()
     {
         int rod_choose;
