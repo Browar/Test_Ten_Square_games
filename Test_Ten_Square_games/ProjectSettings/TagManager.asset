@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - fishing_rod
+  - twister
+  - prism
+  - scroll_window
+  - clone
+  - choose
   layers:
   - Default
   - TransparentFX
