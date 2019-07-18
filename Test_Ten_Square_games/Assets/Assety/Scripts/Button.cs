@@ -29,7 +29,7 @@ public class Button : MonoBehaviour
         fishing_rod.SetActive(true);
         fishing_rod_shadow.SetActive(true);
         OffChoose();
-        choose.SetActive(true);
+        choose.SetActive(true);//uruchomienie napisu wybrano na klikniętej wędce
         //scrollView.verticalNormalizedPosition = 1; //umożliwia szybki powrót do góry po wybraniu wędki
     }
     void OffRod()
